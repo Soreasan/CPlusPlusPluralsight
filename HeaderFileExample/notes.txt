@@ -8,3 +8,6 @@ What header files like Functions.h do is literally
 copy and paste their contents when called by an 
 #include statement such as
 #include "Functions.h"
+
+*It's worth noting header files don't need to end with .h
+We would theoretically name it "Functions.pewpewpew" and be fine.
