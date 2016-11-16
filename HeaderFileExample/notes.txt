@@ -1,0 +1,10 @@
+So to compile this you don't need to include
+the header file in the compile statement.
+Just use:
+c++ Functions.cpp AddExample.cpp
+OR
+g++ Functions.cpp AddExample.cpp
+What header files like Functions.h do is literally
+copy and paste their contents when called by an 
+#include statement such as
+#include "Functions.h"
