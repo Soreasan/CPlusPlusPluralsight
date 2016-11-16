@@ -1,0 +1,11 @@
+To compile these files on the commandline you type:
+
+c++ Functions.cpp MathTest.cpp
+
+or alternatively you can type:
+
+g++ Functions.cpp MathTest.cpp
+
+By using c++ instead of gcc in the commandline it
+correctly "links" the files which means the MathTest.cpp
+file can correctly call functions that are in the Functions.cpp file.
