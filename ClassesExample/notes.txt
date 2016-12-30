@@ -1,0 +1,5 @@
+Kenneth Adair
+The example in this folder is taken from "Learn How to Program with C++" by Kate Gregory.  
+
+To compile this example type:
+c++ Account.cpp SimpleClasses.cpp Transaction.cpp
