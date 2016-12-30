@@ -24,7 +24,7 @@ int main()
 
     int l = greeting.length();
     cout << "\"" + greeting + "\" is " << l << " characters long." << endl;
-    int space = greeting.find(' ');
+    auto space = greeting.find(' ');
     string beginning = greeting.substr(space + 1);
     cout << beginning << endl;
     if(beginning == name)
