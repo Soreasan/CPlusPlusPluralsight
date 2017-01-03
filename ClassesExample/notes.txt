@@ -3,3 +3,12 @@ The example in this folder is taken from "Learn How to Program with C++" by Kate
 
 To compile this example type:
 c++ Account.cpp SimpleClasses.cpp Transaction.cpp
+g++ Account.cpp SimpleClasses.cpp Transaction.cpp
+c++ *.cpp
+g++ *.cpp
+make
+make -f changesonly
+
+If we have a file called "makefile" we can type "make" to compile
+If we want to compile using a specific makefile we type: "make -f changesonly"
+(changesonly is the name of the seperate changefile)
