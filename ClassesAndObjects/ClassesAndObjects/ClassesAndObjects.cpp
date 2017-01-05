@@ -6,13 +6,16 @@
 #include "Tweeter.h"
 #include <iostream>
 
+using std::cout;
+using std::endl;
+
 int _tmain(int argc, _TCHAR* argv[])
 {
 	Person p1("Kate", "Gregory", 123);
 	{
 		Tweeter p2("Someone", "Else", 456, "@whoever");
 	}
-	std::cout<< "after innermost block" << std::endl;
+	cout<< "after innermost block" << endl;
 	return 0;
 }
 
