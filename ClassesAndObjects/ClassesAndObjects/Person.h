@@ -1,4 +1,7 @@
 #include <string>
+//If we've already included the Person class don't include it again.  #ifndef means "If not defined"
+#ifndef _Person_H
+#define _Person_H
 class Person
 {
 private:
@@ -9,3 +12,4 @@ public:
 	Person(std::string first, std::string last, int arbitrary);
 	~Person();
 };
+#endif
