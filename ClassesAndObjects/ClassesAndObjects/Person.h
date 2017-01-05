@@ -11,5 +11,8 @@ private:
 public:
 	Person(std::string first, std::string last, int arbitrary);
 	~Person();
+	std::string GetName();
+	int GetNumber() { return arbitrarynumber; }
+	void setNumber(int number) { arbitrarynumber = number; }
 };
 #endif

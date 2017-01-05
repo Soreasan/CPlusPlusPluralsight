@@ -19,6 +19,9 @@ int _tmain(int argc, _TCHAR* argv[])
 	cout<< "after innermost block" << endl;
 	Status s = Pending;
 	s = Approved;
+	cout << "p1: " << p1.GetName() << " " << p1.GetNumber() << endl;
+	p1.setNumber(124);
+	cout << "p1: " << p1.GetName() << " " << p1.GetNumber() << endl;
 	return 0;
 }
 
