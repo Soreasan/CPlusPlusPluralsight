@@ -14,5 +14,9 @@ public:
 	std::string GetName();
 	int GetNumber() { return arbitrarynumber; }
 	void setNumber(int number) { arbitrarynumber = number; }
+	bool operator<(Person& p);
+	bool operator<(int i);
+	friend bool operator<(int i, Person& p);	//Friend keyword makes this exception to public/private rules
 };
+bool operator<(int i, Person& p);
 #endif
