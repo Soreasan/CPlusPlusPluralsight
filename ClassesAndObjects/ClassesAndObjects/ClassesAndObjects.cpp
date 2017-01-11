@@ -7,8 +7,13 @@
 #include "status.h"
 #include <iostream>
 
-using std::cout;
-using std::endl;
+using namespace std;
+
+template<class T>
+T max(T t1, T t2)
+{
+	return t1 < t2 ? t2 : t1;
+}
 
 int _tmain(int argc, _TCHAR* argv[])
 {
@@ -38,6 +43,16 @@ int _tmain(int argc, _TCHAR* argv[])
 	if (!(300 < p1))
 		cout << "not " << endl;
 	cout << "less than p1" << endl;
+	/**************************************************************/
+	
+	/*********************** Template demo ************************/
+	cout << "max of 33 and 44 is " << max(33, 44) << endl;
+	string s1 = "hello";
+	string s2 = "world";
+	cout << "max of " << s1 << " and " << s2 << " is " << max(s1, s2) << endl;
+	Person p5("Kate", "Gregory", 123);
+	Person p6("Someone", "Else", 456);
+	cout << "max of " << p5.GetName() << " and " << p6.GetName() << " is " << (max(p5, p6)).GetName() << endl;
 	/**************************************************************/
 	return 0;
 }
