@@ -5,6 +5,7 @@
 #include "Person.h"
 #include "Tweeter.h"
 #include "status.h"
+#include "Accum.h"
 #include <iostream>
 
 using namespace std;
@@ -54,6 +55,20 @@ int _tmain(int argc, _TCHAR* argv[])
 	Person p6("Someone", "Else", 456);
 	cout << "max of " << p5.GetName() << " and " << p6.GetName() << " is " << (max(p5, p6)).GetName() << endl;
 	/**************************************************************/
+
+	/***************** Class Template demo ************************/
+	//Initialize a template class
+	Accum<int> integers(0);
+	integers += 3;
+	integers += 7;
+	cout << integers.GetTotal() << endl;
+
+	Accum<string> strings("");
+	strings += "hello";
+	strings += " world";
+	cout << strings.GetTotal() << endl;
+	/**************************************************************/
+
 	return 0;
 }
 
