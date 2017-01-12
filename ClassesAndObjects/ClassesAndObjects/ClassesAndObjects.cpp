@@ -69,6 +69,16 @@ int _tmain(int argc, _TCHAR* argv[])
 	cout << strings.GetTotal() << endl;
 	/**************************************************************/
 
+	/***************** Template Specialization demo ***************/
+	//Person start("", "", 0);
+	Accum<Person> people(0);
+	Person p7("Kate", "Gregory", 123);
+	Person p8("Someone", "Else", 456);
+	people += p7;
+	people += p8;
+	cout << people.GetTotal() << endl;
+	/**************************************************************/
+
 	return 0;
 }
 
