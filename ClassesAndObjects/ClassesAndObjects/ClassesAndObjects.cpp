@@ -132,8 +132,25 @@ int _tmain(int argc, _TCHAR* argv[])
 	Person Kate("Kate", "Gregory", 234);
 	Kate.setNumber(235);
 	const Person cKate = Kate;
-	//cKate.setNumber(236);
+	//cKate.setNumber(236);	//Can't do this because cKate is const so we can't change member variables.
 	int KateNumber = cKate.GetNumber();
+	/**************************************************************/
+
+	/******************Const and Pointers Demo*********************/
+	int* pI = &i;
+	const int* pII = &ci;
+
+	const int * pcI = pI;	//POINTER TO A CONST INT
+	//*pcI = 4;	//Can't do this
+	pcI = &j;	//Can change where the pointer points.
+
+	int * const cpI = pI;	//CONST POINTER POINTING TO AN INTEGER
+	*cpI = 4;
+	//cpI = &j;	//Can't do this
+
+	const int * const crazy = pI;	//const pointer to a const int, can't change anything
+	//*crazy = 4;
+	//crazy = &j;
 	/**************************************************************/
 	
 	return 0;
