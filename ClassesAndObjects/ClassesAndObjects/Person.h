@@ -11,12 +11,12 @@ private:
 public:
 	Person(std::string first, std::string last, int arbitrary);
 	~Person();
-	std::string GetName();
-	int GetNumber() { return arbitrarynumber; }
+	std::string GetName() const;
+	int GetNumber() const { return arbitrarynumber; }
 	void setNumber(int number) { arbitrarynumber = number; }
-	bool operator<(Person& p);
-	bool operator<(int i);
-	friend bool operator<(int i, Person& p);	//Friend keyword makes this exception to public/private rules
+	bool operator<(Person& p) const;
+	bool operator<(int i) const;
+	friend bool operator<(int i, const Person& p);	//Friend keyword makes this exception to public/private rules
 };
-bool operator<(int i, Person& p);
+bool operator<(int i, const Person& p);
 #endif

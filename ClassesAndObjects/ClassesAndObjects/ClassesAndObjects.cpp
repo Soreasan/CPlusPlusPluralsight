@@ -16,6 +16,11 @@ T max(T t1, T t2)
 	return t1 < t2 ? t2 : t1;
 }
 
+int DoubleIt(const int& x)
+{
+	return x * 2;
+}
+
 int _tmain(int argc, _TCHAR* argv[])
 {
 	Person p1("Kate", "Gregory", 123);
@@ -113,7 +118,24 @@ int _tmain(int argc, _TCHAR* argv[])
 	}
 
 	/**************************************************************/
+	
+	/**********************Const keyword demo**********************/
+	int i = 3;
+	const int ci = 3;
+	i = 4;
+	//ci = 4;	//Can't do this because const prevents us from changing it
 
+	int j = 10;
+	int DoubleJ = DoubleIt(j);
+	int DoubleTen = DoubleIt(10);
+
+	Person Kate("Kate", "Gregory", 234);
+	Kate.setNumber(235);
+	const Person cKate = Kate;
+	//cKate.setNumber(236);
+	int KateNumber = cKate.GetNumber();
+	/**************************************************************/
+	
 	return 0;
 }
 
