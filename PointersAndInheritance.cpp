@@ -1,10 +1,14 @@
 /*
  *  Kenneth Adair
  *  This demos pointers and inheritance
+ *  To compile type:
+ *  c++ -std=c++11 [filename]
+ *  The #include <memory> requires c++ 11
  */
 
 #include <iostream>
 #include <string>
+#include <memory>
 using namespace std;
 
 class Person
@@ -77,5 +81,9 @@ int main()
     cout << KateGregcons->GetName() << endl;
     cout << pKateGregcons->GetName() << endl;
     delete KateGregcons;
+    
+    //Demos how Shared Pointers / Smart Pointers work with polymorphism
+    auto spKate = make_shared<Tweeter>("SKate", "KGregory", 456, "@gregcons");
+    cout << spKate->GetName() << endl;
     return 0;
 }
