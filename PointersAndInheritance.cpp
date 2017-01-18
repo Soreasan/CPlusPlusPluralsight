@@ -103,5 +103,43 @@ int main()
     Person& localP4 = localT2;
     cout << localP4.GetName() << endl;
     
+    //Casting demo
+    Tweeter t("Kate", "Gregory", 123, "@gregcons");
+    Person* p = &t;
+    //Tweeter* pt = p;    //Doesn't work, compiler error
+    Tweeter* pt = (Tweeter*) p; // C style cast, works in this specific case but not ideal
+    cout << pt->GetName() << endl;
+
+    //Demo of casting screwing us up, this gets past compiler error checks but crashes
+    /*
+    int i = 3;
+    Tweeter *pi = (Tweeter*) &i;    //Means "Just trust me, this int is actually a Tweeter"
+    cout << pi->GetName() << endl;
+    */
+
+    //static_cast<> demo, this one is better than C style cast because compiler can catch stuff
+    Tweeter* pi = static_cast<Tweeter*>(p);
+    cout << pi->GetName() << endl;
+
+    //this one doesn't work but static_cast catches it for us, won't compile
+    /*
+    int i = 3;
+    Tweeter* pi2 = static_cast<Tweeter*>(&i);
+    cout << pi2->GetName() << endl;
+    */
+
+    //We can try to use dynamic_cast which won't be caught by compiler but gives us null pointers when it fails
+    /*
+    int i = 3;
+    Tweeter* pi = dynamic_cast<Tweeter*>(&i);
+    if(pi)  //Check if it's null
+    {
+        cout << pi->GetName() << endl;
+    }
+    else
+    {
+        cout << "Resource can't be cast to tweeter" << endl;
+    }
+    */
     return 0;
 }
