@@ -85,5 +85,23 @@ int main()
     //Demos how Shared Pointers / Smart Pointers work with polymorphism
     auto spKate = make_shared<Tweeter>("SKate", "KGregory", 456, "@gregcons");
     cout << spKate->GetName() << endl;
+
+    //Slicing [losing information when converting to a different clas] demo
+    Person localP("Local", "Person", 333);
+    //Tweeter localT = localP;  Can't do this, can't convert a person to a tweeter
+
+    Tweeter localT2("Local", "Tweeter", 444, "@local");
+    //Slicing occurs here, we lose @local handle
+    Person localP2 = localT2;
+    cout << localP2.GetName() << endl;
+
+    //Can get around it by doing this
+    Person* localP3 = &localT2;
+    cout << localP3->GetName() << endl;
+
+    //Best way is to just change it to a person reference, references are polymorphic
+    Person& localP4 = localT2;
+    cout << localP4.GetName() << endl;
+    
     return 0;
 }
