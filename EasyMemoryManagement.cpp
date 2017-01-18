@@ -86,6 +86,11 @@ public:
         pResource = make_shared<Resource>("Resource for " + GetName());
         auto t = make_shared<int>(10);
     }
+    //Demos that smart pointers work like normal pointers, overloaded and stuff
+    string GetResourceName() const
+    {
+        return pResource->GetName();
+    }
 };
 
 int main()
@@ -110,5 +115,6 @@ int main()
     Kate.AddResource();     //Requires us to delete the old resource or we have memory leaks.
     Person Kate2 = Kate;    //Requires us to build a constructor that uses a &Person
     Kate = Kate2;           //Requires us to overload the assignment operator or it will crash
+    string s1 = Kate.GetResourceName(); //Demos that smart pointers work like normal pointers.
     return 0;
 }
